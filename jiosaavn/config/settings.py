@@ -1,7 +1,8 @@
-API_ID = 17108931
-API_HASH = "436b24700208cae55ded351d8f25fd7a"
-BOT_TOKEN = "7597207536:AAGSai7WnAefsctUmwREm4rtGn4pQj5S7ts"
+from os import getenv
 
+API_ID = getenv("API_ID")
+API_HASH = getenv("API_HASH")
+BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_COMMANDS = (
     ("start", "Initialize the bot and check its status"),
     ("settings", "Configure and manage bot settings"),
@@ -9,7 +10,6 @@ BOT_COMMANDS = (
     ("about", "Learn more about the bot and its features"),
 )
 
-DATABASE_URL = "mongodb+srv://adminleech:UHee459K12WJBfDY@cluster0.xsmgkhi.mongodb.net/?retryWrites=true&w=majority"
-HOST = "0.0.0.0"
-PORT = 8080
-OWNER_ID = 5300197778
+DATABASE_URL = getenv("DATABASE_URL", None)
+HOST = getenv("HOST", "0.0.0.0")
+PORT = int(getenv("PORT", "8080"))
